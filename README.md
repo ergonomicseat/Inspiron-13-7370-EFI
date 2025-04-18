@@ -1,58 +1,28 @@
 # Dell-inspiron-13-7370-Hackintosh
+This is a fork of the repository [qiqco/Dell-inspiron-13-7370-Hackintosh](https://github.com/qiqco/Dell-inspiron-13-7370-Hackintosh) by [qiqco](https://github.com/qiqco).
 
-# 如果你要使用这个EFI，你需要更改BIOS的Secure boot，并且修改CFG和DVMT
+## The original maintainers repository lists the Dell Inspiron 7370 system as follows:
 
-<a href="https://www.asly.top/archives/21/"> DVMT教程<a/>
-
-<a href="https://www.asly.top/archives/20/"> CFG教程<a/>
-  
-## 下载地址
-<a href="https://github.com/qiqco/Dell-inspiron-13-7370-Hackintosh/releases">EFI下载地址<a/>
-
-## 配置
-CPU | i5-8250U
+Part | Name
 ------------ | -------------
-主板 | 戴尔06KDFD
-内存 | 8GB（2400MHz）
-主硬盘 | 西数SN750（500GB）
-显卡 | UHD620
-声卡 | ALC295
-网卡 | AX200
+CPU | i5-8250U
+Model | 06KDFD
+RAM | 8GB（2400MHz）
+Drive | SN750（500GB）
+Graphics | UHD620 ([Intel UHD 620](https://www.intel.com/content/www/us/en/support/products/126789/graphics/processor-graphics/intel-uhd-graphics-family/intel-uhd-graphics-620.html))
+Sound | Realtek ALC295
+Ethernet | Intel AX200
 
-## 正常工作
-* 核显工作正常
+## Changes in this fork
 
-* 声卡工作正常
+Originally the Dell Inspiron 7370 came with a different WiFi adapter: Intel AC 7265.
+This fork of the original repository updates the following kexts for better compatibility so the AC 7265 works as well.
 
-* Type-C工作正常
+Item | Kext | Source
+------------ | ------------- | -------------
+Trackpad | VoodooPS2Controller.kext | https://github.com/acidanthera/VoodooPS2
+WiFi | AirportItlwm.kext | https://github.com/OpenIntelWireless/itlwm
 
-* 快捷键（亮度，声音等）工作正常
+## How to use
 
-* 网卡工作正常
-
-* 触摸版工作正常
-
-* 背光键盘工作正常
-
-* 睡眠正常
-
-* 蓝牙工作正常
-
-* 变频正常
-
-* 摄像头工作正常
-
-* 传感器正常
-
-* 耳机口（~~无法识别~~）~~使用ComboJack解决~~ 
-  
-   耳机孔问题在Monterey出现新变化，会出现插入耳机10s后无声音的现象，在Big Sur中使用ComboJack修复耳机呈现正常。目前正在修复中~~
-
-* 读卡器未驱动（~~热启动可以使用~~）已解决,冷启动可用
-
-## 如果你有什么好的意见，请告诉我，使我更好的维护这个仓库
-邮箱：qiqco@qq.com
-
-## 如果你需要安装教程，请访问我的博客
-
-~~<a href="https://www.asly.top/"> 安装教程（点击进入） <a/>~~
+Follow the instructions at https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html#downloading-macos to download the matching __Ventura__ image through macrecovery.py and place the image together with this repo on a USB drive (formatted to FAT32).
